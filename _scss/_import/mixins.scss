@@ -1,0 +1,17 @@
+@mixin mquery($size) {
+  @if $size == xsmall {
+    @media (min-width: 28em) {
+      @content;
+    }
+  }
+  @if $size == small {
+    @media (min-width: 45em) {
+      @content;
+    }
+  }
+  @if $size == medium {
+    @media (min-width: 55em) {
+      @content;
+    }
+  }
+}

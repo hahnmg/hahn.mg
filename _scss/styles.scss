@@ -1,7 +1,9 @@
-@import "reset.scss";
+@import "_import/mixins";
+@import "_import/reset";
 
 $primaryColor: #000;
 $secondaryColor: #b8b8b8;
+$gridBaseSize: 2.110em;
 
 
 body {
@@ -10,21 +12,173 @@ body {
     font-size: 19px;
     line-height: 1.23;
 }
+
+a {
+    color: $primaryColor;
+    text-decoration: underline;
+}
+
 h1 {
     font-weight: 900;
-    font-size: 1.789em;
+    font-size: 1.316em;
+    margin-bottom: $gridBaseSize/2;
 }
 h2 {
     font-weight: 700;
-    font-size: 1.526em;
+    font-size: 1.158em;
     color: $secondaryColor;
+}
+@include mquery(small) {
+    h1 {
+        font-size: 1.789em;
+    }
+    h2 {
+        font-size: 1.526em;
+    }
 }
 h3 {
     font-weight: 700;
     font-size: 1em;
+    margin-bottom: 0.5em;
 }
+
+img {
+    width: 100%;
+    height: auto;
+}
+
+p {
+    margin-bottom: 1em;
+}
+
 ul {
+    list-style-type: none;
+
     span {
         color: $secondaryColor;
     }
+
+    li {
+        position: relative;
+        padding-left: 1em;
+        margin-bottom: 0.5em;
+
+        &:before {
+            content: '\2013';
+            position: absolute;
+            left: 0;
+        }
+    }
 }
+
+.section,
+.header {
+    padding: $gridBaseSize 0;
+    clear: both;
+    max-width: 70em;
+
+    + .section {
+        padding-top: 0;
+    }
+}
+.box {
+    padding-left: $gridBaseSize;
+    padding-right: $gridBaseSize;
+    overflow: auto;
+    position: relative;
+}
+@include mquery(small) {
+    .section,
+    .header {
+        padding: $gridBaseSize*2 0;
+    }
+    .box {
+        padding-left: $gridBaseSize*2;
+        padding-right: $gridBaseSize*2;
+    }
+}
+@include mquery(xsmall) {
+    .box-cols {
+        padding: 0;
+    }
+}
+
+.col-1 {
+    margin-left: -$gridBaseSize;
+    margin-right: -$gridBaseSize;
+    margin-bottom: $gridBaseSize;
+}
+.col-2 {
+}
+.col-3 {
+}
+@include mquery(xsmall) {
+    .col {
+        padding-left: 0;
+        padding-right: $gridBaseSize;
+        margin: 0;
+    }
+    .col-1 {
+        float: left;
+        width: 45%;
+    }
+    .col-2 {
+        float: left;
+        width: 55%;
+    }
+    .col-3 {
+        position: absolute;
+        top: 45vw;
+        left: $gridBaseSize;
+        width: 37vw;
+        font-size: 2.8vw;
+    }
+}
+@include mquery(small) {
+    .col {
+        padding-left: 0;
+        padding-right: $gridBaseSize;
+        margin: 0;
+    }
+    .col-1 {
+        float: left;
+        width: 30%;
+    }
+    .col-2 {
+        float: left;
+        width: 45%;
+    }
+    .col-3 {
+        position: relative;
+        top: inherit;
+        left: inherit;
+        font-size: inherit;
+        float: left;
+        width: 25%;
+        padding-right: 0;
+    }
+}
+@include mquery(medium) {
+    .col-1 {
+        float: left;
+        width: 36%;
+    }
+    .col-2 {
+        float: left;
+        width: 39%;
+    }
+    .col-3 {
+        float: left;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+

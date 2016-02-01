@@ -8,6 +8,10 @@
                 "sourceComments": false,
                 "outputStyle": "compressed"
             }
+        },
+        "_scss/_import/*": {
+            "sass.enabled": false,
+            "spaceUnits": 2
         }
     }
 }
