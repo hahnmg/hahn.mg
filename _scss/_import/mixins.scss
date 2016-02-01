@@ -5,7 +5,7 @@
     }
   }
   @if $size == small {
-    @media (min-width: 45em) {
+    @media (min-width: 44em) {
       @content;
     }
   }

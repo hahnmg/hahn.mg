@@ -27,6 +27,10 @@ h2 {
     font-weight: 700;
     font-size: 1.158em;
     color: $secondaryColor;
+
+    + h3 {
+        margin-top: $gridBaseSize/3;
+    }
 }
 @include mquery(small) {
     h1 {
@@ -84,7 +88,7 @@ ul {
 .box {
     padding-left: $gridBaseSize;
     padding-right: $gridBaseSize;
-    overflow: auto;
+    overflow: hidden;
     position: relative;
 }
 @include mquery(small) {
@@ -111,6 +115,30 @@ ul {
 .col-2 {
 }
 .col-3 {
+    .social {
+        a {
+            background-size: 25px 25px;
+            background-position: 0 0;
+            display: block;
+            height: 25px;
+            padding-top: 2px;
+            padding-left: 30px;
+            margin-bottom: 0.5em;
+
+            &.twitter {
+                background-image: url(../images/icon-tw.svg);
+            }
+            &.xing {
+                background-image: url(../images/icon-x.svg);
+            }
+            &.facebook {
+                background-image: url(../images/icon-f.svg);
+            }
+            &.dribbble {
+                background-image: url(../images/icon-d.svg);
+            }
+        }
+    }
 }
 @include mquery(xsmall) {
     .col {
@@ -168,7 +196,6 @@ ul {
         width: 39%;
     }
     .col-3 {
-        float: left;
     }
 }
 
