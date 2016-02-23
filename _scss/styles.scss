@@ -114,7 +114,7 @@ ul {
 }
 .col-2 {
 }
-.col-3 {
+.contact {
     .social {
         a {
             background-size: 25px 25px;
@@ -199,6 +199,17 @@ ul {
     }
 }
 
+.hidden-phone {
+    display: none;
+}
+@include mquery(xsmall) {
+    .hidden-phone {
+        display: block;
+    }
+    .visible-phone {
+        display: none;
+    }
+}
 
 
 
